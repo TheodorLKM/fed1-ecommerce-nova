@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Discover thoughtfully selected everyday products at NOVA."
+    />
+    <title>NOVA | Home</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="module" src="./js/main.js"></script>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <nav class="container nav" aria-label="Main navigation">
+        <a class="logo" href="./index.html">NOVA.</a>
+
+        <div class="nav-links">
+          <a href="#products">Shop</a>
+          <a href="./account/login.html">Login</a>
+          <a href="./cart/index.html">Cart</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero container">
+        <div class="hero-copy">
+          <p class="eyebrow">DISCOVER NOVA</p>
+          <h1>Find your next favourite.</h1>
+          <p>
+            Explore thoughtfully selected products for your
+            everyday life.
+          </p>
+          <a class="btn" href="#products">Explore products</a>
+        </div>
+
+        <div class="carousel" aria-label="Featured products">
+          <div id="carousel-content">
+            <p>Loading featured products...</p>
+          </div>
+
+          <div class="carousel-controls">
+            <button id="previous" type="button" aria-label="Previous product">
+              &#8592;
+            </button>
+
+            <span id="carousel-count" aria-live="polite">1 / 3</span>
+
+            <button id="next" type="button" aria-label="Next product">
+              &#8594;
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="products-section container" id="products">
+        <h2>Explore our products</h2>
+        <p id="product-status" role="status">Loading products...</p>
+        <div id="product-grid" class="product-grid"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>NOVA. — Your everyday store.</p>
+      </div>
+    </footer>
+  </body>
+</html>

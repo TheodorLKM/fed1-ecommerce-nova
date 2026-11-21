@@ -1,0 +1,25 @@
+const API_BASE = "https://v2.api.noroff.dev";
+
+export async function getProducts() {
+  const response = await fetch(`${API_BASE}/online-shop`);
+
+  if (!response.ok) {
+    throw new Error("Could not load products.");
+  }
+
+  const result = await response.json();
+  return result.data;
+}
+
+export async function getProduct(id) {
+  const response = await fetch(
+    `${API_BASE}/online-shop/${encodeURIComponent(id)}`
+  );
+
+  if (!response.ok) {
+    throw new Error("Could not load this product.");
+  }
+
+  const result = await response.json();
+  return result.data;
+}
