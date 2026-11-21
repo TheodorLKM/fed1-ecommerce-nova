@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Your NOVA demonstration order is complete."
+  />
+  <title>NOVA | Order Confirmation</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="logo" href="../index.html">NOVA.</a>
+
+      <div class="nav-links">
+        <a href="../index.html#products">Shop</a>
+        <a href="../account/login.html">Login</a>
+        <a href="../cart/index.html">Cart</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container success-page">
+    <section class="success-card" aria-labelledby="success-heading">
+      <div class="success-icon" aria-hidden="true">&#10003;</div>
+
+      <p class="eyebrow">ORDER CONFIRMATION</p>
+      <h1 id="success-heading">Thank you for your order!</h1>
+
+      <p id="success-description">
+        Your demonstration checkout is complete.
+      </p>
+
+      <div id="order-confirmation" class="order-confirmation" hidden>
+        <p>
+          <strong>Order reference</strong>
+          <span id="order-reference"></span>
+        </p>
+        <p>
+          <strong>Items ordered</strong>
+          <span id="order-item-count"></span>
+        </p>
+        <p>
+          <strong>Order total</strong>
+          <span id="order-total"></span>
+        </p>
+      </div>
+
+      <p class="success-note">
+        This was a simulated purchase. No payment was taken
+        and no real order was placed.
+      </p>
+
+      <a href="../index.html" class="btn success-home-button">
+        Return to homepage
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>NOVA. — Your everyday store.</p>
+    </div>
+  </footer>
+
+  <script type="module">
+    const savedOrder = sessionStorage.getItem("nova_last_order");
+
+    if (savedOrder) {
+      try {
+        const order = JSON.parse(savedOrder);
+
+        if (
+          typeof order.reference === "string" &&
+          typeof order.total === "number" &&
+          Number.isFinite(order.total) &&
+          Number.isSafeInteger(order.itemCount)
+        ) {
+          const formatPrice = new Intl.NumberFormat("nb-NO", {
+            style: "currency",
+            currency: "NOK"
+          });
+
+          document.querySelector("#order-reference").textContent =
+            order.reference;
+
+          document.querySelector("#order-item-count").textContent =
+            String(order.itemCount);
+
+          document.querySelector("#order-total").textContent =
+            formatPrice.format(order.total);
+
+          document.querySelector("#order-confirmation").hidden = false;
+        }
+      } catch {
+        // Show the generic confirmation if order data is invalid.
+      }
+    } else {
+      document.querySelector("#success-heading").textContent =
+        "No recent order found";
+
+      document.querySelector("#success-description").textContent =
+        "Complete a demonstration checkout to see your confirmation.";
+    }
+  </script>
+</body>
+</html>

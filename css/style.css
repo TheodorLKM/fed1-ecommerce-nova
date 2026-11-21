@@ -840,3 +840,258 @@ button:disabled {
     padding: 22px;
   }
 }
+
+.checkout-page {
+  min-height: 70vh;
+  padding-block: 36px 90px;
+}
+
+.checkout-heading {
+  margin-bottom: 36px;
+}
+
+.checkout-heading h1 {
+  font-size: clamp(36px, 4vw, 48px);
+  margin: 12px 0;
+}
+
+.checkout-heading > p:last-child {
+  color: #555;
+}
+
+.checkout-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 388px;
+  align-items: start;
+  gap: 36px;
+}
+
+.checkout-form-card {
+  background: var(--white);
+  padding: 36px;
+  border-radius: 12px;
+}
+
+.checkout-form-card h2 {
+  font-size: 28px;
+  margin: 0 0 28px;
+}
+
+.checkout-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 20px;
+}
+
+.checkout-full-width {
+  grid-column: 1 / -1;
+}
+
+.payment-fieldset {
+  margin: 20px 0 24px;
+  padding: 0;
+  border: 0;
+}
+
+.payment-fieldset legend {
+  font-family: Georgia, serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--forest);
+  margin-bottom: 20px;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+  border: 1px solid #d8d4cb;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.payment-option:has(input:checked) {
+  border-color: var(--forest);
+  background: var(--cream);
+}
+
+.payment-option input {
+  accent-color: var(--forest);
+  width: 18px;
+  height: 18px;
+}
+
+.checkout-disclaimer {
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--sand);
+  color: var(--forest);
+  font-size: 14px;
+}
+
+.checkout-submit {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.checkout-items {
+  display: grid;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #d8d4cb;
+}
+
+.checkout-item {
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+}
+
+.checkout-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: var(--sand);
+}
+
+.checkout-item-info {
+  min-width: 0;
+}
+
+.checkout-item-info strong {
+  display: block;
+  color: var(--forest);
+  font-size: 14px;
+}
+
+.checkout-item-info span {
+  color: #666;
+  font-size: 13px;
+}
+
+.checkout-summary .continue-shopping {
+  display: inline-block;
+  margin-top: 24px;
+}
+
+@media (max-width: 900px) {
+  .checkout-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .checkout-page {
+    padding-block: 24px 60px;
+  }
+
+  .checkout-form-card {
+    padding: 24px 18px;
+  }
+
+  .checkout-form-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .checkout-full-width {
+    grid-column: auto;
+  }
+
+  .payment-fieldset legend {
+    font-size: 24px;
+  }
+}
+
+.success-page {
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 80px;
+}
+
+.success-card {
+  width: 100%;
+  max-width: 650px;
+  padding: 60px 48px;
+  border-radius: 12px;
+  background: var(--white);
+  text-align: center;
+}
+
+.success-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 28px;
+  border-radius: 50%;
+  background: var(--forest);
+  color: var(--white);
+  font-size: 42px;
+}
+
+.success-card h1 {
+  font-size: clamp(32px, 4vw, 44px);
+  margin: 12px 0 20px;
+}
+
+#success-description {
+  color: #555;
+}
+
+.order-confirmation {
+  margin: 32px 0;
+  padding: 20px 24px;
+  border-radius: 8px;
+  background: var(--cream);
+  text-align: left;
+}
+
+.order-confirmation[hidden] {
+  display: none;
+}
+
+.order-confirmation p {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.order-confirmation strong {
+  color: var(--forest);
+}
+
+.success-note {
+  color: #666;
+  font-size: 14px;
+  margin: 24px 0;
+}
+
+.success-home-button {
+  margin-top: 12px;
+}
+
+@media (max-width: 600px) {
+  .success-page {
+    padding-block: 40px 60px;
+  }
+
+  .success-card {
+    padding: 40px 20px;
+  }
+
+  .success-icon {
+    width: 68px;
+    height: 68px;
+    font-size: 36px;
+  }
+}

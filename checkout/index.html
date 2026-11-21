@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Complete your NOVA demonstration checkout."
+  />
+  <title>NOVA | Checkout</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <script type="module" src="../js/checkout.js"></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="logo" href="../index.html">NOVA.</a>
+
+      <div class="nav-links">
+        <a href="../index.html#products">Shop</a>
+        <a href="../account/login.html">Login</a>
+        <a href="../cart/index.html">Cart</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container checkout-page">
+    <p class="breadcrumb">
+      <a href="../index.html">Home</a> /
+      <a href="../cart/index.html">Cart</a> /
+      Checkout
+    </p>
+
+    <div class="checkout-heading">
+      <p class="eyebrow">ALMOST THERE</p>
+      <h1>Checkout</h1>
+      <p>Enter your delivery details and review your order.</p>
+    </div>
+
+    <div class="checkout-layout">
+      <section class="checkout-form-card" aria-labelledby="delivery-heading">
+        <form id="checkout-form" novalidate>
+          <h2 id="delivery-heading">Delivery details</h2>
+
+          <div class="checkout-form-grid">
+            <div class="form-field">
+              <label for="first-name">First name</label>
+              <input id="first-name" name="firstName"
+                     autocomplete="given-name" required />
+            </div>
+
+            <div class="form-field">
+              <label for="last-name">Last name</label>
+              <input id="last-name" name="lastName"
+                     autocomplete="family-name" required />
+            </div>
+
+            <div class="form-field checkout-full-width">
+              <label for="checkout-email">Email address</label>
+              <input id="checkout-email" name="email" type="email"
+                     autocomplete="email" required />
+            </div>
+
+            <div class="form-field checkout-full-width">
+              <label for="phone">Phone number</label>
+              <input id="phone" name="phone" type="tel"
+                     autocomplete="tel" required />
+            </div>
+
+            <div class="form-field checkout-full-width">
+              <label for="street">Street address</label>
+              <input id="street" name="street"
+                     autocomplete="street-address" required />
+            </div>
+
+            <div class="form-field">
+              <label for="postal-code">Postal code</label>
+              <input id="postal-code" name="postalCode"
+                     autocomplete="postal-code" required />
+            </div>
+
+            <div class="form-field">
+              <label for="city">City</label>
+              <input id="city" name="city"
+                     autocomplete="address-level2" required />
+            </div>
+
+            <div class="form-field checkout-full-width">
+              <label for="country">Country</label>
+              <input id="country" name="country"
+                     autocomplete="country-name" required />
+            </div>
+          </div>
+
+          <fieldset class="payment-fieldset">
+            <legend>Payment method</legend>
+
+            <label class="payment-option">
+              <input type="radio" name="payment" value="card" required />
+              <span>Credit or debit card</span>
+            </label>
+
+            <label class="payment-option">
+              <input type="radio" name="payment" value="vipps" />
+              <span>Vipps</span>
+            </label>
+
+            <label class="payment-option">
+              <input type="radio" name="payment" value="paypal" />
+              <span>PayPal</span>
+            </label>
+          </fieldset>
+
+          <p class="checkout-disclaimer">
+            This is a demonstration checkout. No payment will be
+            collected, and no real order will be placed.
+          </p>
+
+          <p id="checkout-message" class="auth-message"
+             role="status" aria-live="polite"></p>
+
+          <button id="complete-purchase" class="btn checkout-submit"
+                  type="submit">
+            Complete purchase
+          </button>
+        </form>
+      </section>
+
+      <aside class="cart-summary checkout-summary"
+             aria-labelledby="checkout-summary-heading">
+        <h2 id="checkout-summary-heading">Your order</h2>
+
+        <div id="checkout-items" class="checkout-items"></div>
+
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <strong id="checkout-subtotal">0 kr</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Delivery</span>
+          <span>Free</span>
+        </div>
+
+        <div class="summary-row summary-total">
+          <span>Total</span>
+          <strong id="checkout-total">0 kr</strong>
+        </div>
+
+        <a class="continue-shopping" href="../cart/index.html">
+          &#8592; Back to cart
+        </a>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>NOVA. — Your everyday store.</p>
+    </div>
+  </footer>
+</body>
+</html>
