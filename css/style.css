@@ -1095,3 +1095,17 @@ button:disabled {
     font-size: 36px;
   }
 }
+
+.nav-logout {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.nav-logout:hover,
+.nav-logout:focus-visible {
+  text-decoration: underline;
+}
