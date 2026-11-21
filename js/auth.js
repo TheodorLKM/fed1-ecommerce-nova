@@ -100,14 +100,26 @@ if (loginForm) {
         throw new Error("Login succeeded, but no access token was returned.");
       }
 
-      localStorage.setItem("nova_token", user.accessToken);
-      localStorage.setItem(
-        "nova_user",
-        JSON.stringify({
-          name: user.name,
-          email: user.email
-        })
-      );
+      const previousUser = JSON.parse(
+  localStorage.getItem("nova_user") || "null"
+);
+
+if (
+  previousUser?.email &&
+  previousUser.email !== user.email
+) {
+  localStorage.removeItem("nova_cart");
+}
+
+localStorage.setItem("nova_token", user.accessToken);
+
+localStorage.setItem(
+  "nova_user",
+  JSON.stringify({
+    name: user.name,
+    email: user.email
+  })
+);
 
       showMessage("Login successful! Redirecting...", "success");
 

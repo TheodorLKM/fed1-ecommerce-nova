@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Review your NOVA shopping cart." />
+  <title>NOVA | Shopping Cart</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <script type="module" src="../js/cart.js"></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="logo" href="../index.html">NOVA.</a>
+
+      <div class="nav-links">
+        <a href="../index.html#products">Shop</a>
+        <a href="../account/login.html">Login</a>
+        <a href="./index.html" aria-current="page">Cart</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container cart-page">
+    <p class="breadcrumb">
+      <a href="../index.html">Home</a> / Shopping cart
+    </p>
+
+    <div class="cart-heading">
+      <div>
+        <p class="eyebrow">YOUR SELECTION</p>
+        <h1>Shopping cart</h1>
+        <p id="cart-count" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <p id="cart-message" role="status" aria-live="polite"></p>
+
+    <div class="cart-layout">
+      <section aria-labelledby="cart-items-heading">
+        <h2 id="cart-items-heading" class="visually-hidden">
+          Items in your cart
+        </h2>
+
+        <div id="cart-items" class="cart-items"></div>
+
+        <div class="cart-bottom-actions">
+          <a href="../index.html#products" class="continue-shopping">
+            &#8592; Continue shopping
+          </a>
+
+          <button id="clear-cart" class="clear-cart-button" type="button">
+            Clear cart
+          </button>
+        </div>
+      </section>
+
+      <aside class="cart-summary" aria-labelledby="summary-heading">
+        <h2 id="summary-heading">Order summary</h2>
+
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <strong id="cart-subtotal">0 kr</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Delivery</span>
+          <span>Free</span>
+        </div>
+
+        <div class="summary-row summary-total">
+          <span>Total</span>
+          <strong id="cart-total">0 kr</strong>
+        </div>
+
+        <a id="checkout-link" class="btn checkout-button"
+           href="../checkout/index.html">
+          Proceed to checkout
+        </a>
+
+        <p class="summary-note">
+          Checkout is a demonstration. No real payment will be taken.
+        </p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>NOVA. — Your everyday store.</p>
+    </div>
+  </footer>
+</body>
+</html>
