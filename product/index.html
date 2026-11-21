@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore product details, ratings and reviews at NOVA."
+    />
+    <title>NOVA | Product Details</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script type="module" src="../js/product.js"></script>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <nav class="container nav" aria-label="Main navigation">
+        <a class="logo" href="../index.html">NOVA.</a>
+
+        <div class="nav-links">
+          <a href="../index.html#products">Shop</a>
+          <a href="../account/login.html">Login</a>
+          <a href="../cart/index.html">Cart</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container product-page">
+      <p class="breadcrumb">
+        <a href="../index.html">Home</a> / Product details
+      </p>
+
+      <p id="product-message" role="status">Loading product...</p>
+
+      <div id="product-details"></div>
+
+      <section class="reviews-section" aria-labelledby="reviews-heading">
+        <h2 id="reviews-heading">Customer reviews</h2>
+        <div id="product-reviews"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>NOVA. — Your everyday store.</p>
+      </div>
+    </footer>
+  </body>
+</html>
